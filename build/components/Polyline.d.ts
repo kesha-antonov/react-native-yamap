@@ -15,5 +15,5 @@ export interface PolylineProps {
     handled?: boolean;
 }
 export declare class Polyline extends React.Component<PolylineProps> {
-    render(): React.JSX.Element;
+    render(): any;
 }

@@ -41,7 +41,7 @@ export declare class ClusteredYamap extends React.Component<ClusteredYaMapProps>
         clusterColor: string;
         maxFps: number;
     };
-    map: React.RefObject<YaMapNativeComponent>;
+    map: any;
     static ALL_MASSTRANSIT_VEHICLES: Vehicles[];
     static init(apiKey: string): Promise<void>;
     static setLocale(locale: string): Promise<void>;
@@ -73,5 +73,5 @@ export declare class ClusteredYamap extends React.Component<ClusteredYaMapProps>
     private processScreenToWorldPointsReceived;
     private resolveImageUri;
     private getProps;
-    render(): React.JSX.Element;
+    render(): any;
 }

@@ -13,5 +13,5 @@ export interface CircleProps {
 }
 export declare class Circle extends React.Component<CircleProps> {
     static defaultProps: {};
-    render(): React.JSX.Element;
+    render(): any;
 }

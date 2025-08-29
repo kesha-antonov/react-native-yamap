@@ -32,7 +32,7 @@ export declare class YaMap extends React.Component<YaMapProps> {
         clusterColor: string;
         maxFps: number;
     };
-    map: React.RefObject<YaMapNativeComponent>;
+    map: any;
     static ALL_MASSTRANSIT_VEHICLES: Vehicles[];
     static init(apiKey: string): Promise<void>;
     static setLocale(locale: string): Promise<void>;
@@ -64,5 +64,5 @@ export declare class YaMap extends React.Component<YaMapProps> {
     private processScreenToWorldPointsReceived;
     private resolveImageUri;
     private getProps;
-    render(): React.JSX.Element;
+    render(): any;
 }

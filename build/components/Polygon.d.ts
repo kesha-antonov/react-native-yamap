@@ -15,5 +15,5 @@ export declare class Polygon extends React.Component<PolygonProps> {
     static defaultProps: {
         innerRings: never[];
     };
-    render(): React.JSX.Element;
+    render(): any;
 }

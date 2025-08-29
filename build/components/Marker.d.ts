@@ -26,7 +26,7 @@ export declare class Marker extends React.Component<MarkerProps, State> {
     };
     state: {
         recreateKey: boolean;
-        children: React.ReactElement<any, string | React.JSXElementConstructor<any>> | undefined;
+        children: any;
     };
     private getCommand;
     static getDerivedStateFromProps(nextProps: MarkerProps, prevState: State): Partial<State>;
@@ -34,6 +34,6 @@ export declare class Marker extends React.Component<MarkerProps, State> {
     private getProps;
     animatedMoveTo(coords: Point, duration: number): void;
     animatedRotateTo(angle: number, duration: number): void;
-    render(): React.JSX.Element;
+    render(): any;
 }
 export {};
