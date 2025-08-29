@@ -83,7 +83,7 @@ class YamapSearch: NSObject {
         return YMKGeometry(boundingBox: self.defaultBoundingBox)
     }
 
-    private func convertSearchResponce(search: YMKSearchResponse?) -> [String: Any] {
+    private func convertSearchResponse(search: YMKSearchResponse?) -> [String: Any] {
         var searchToPass = [String: Any]()
         let geoObjects = search?.collection.children.compactMap { $0.obj }
 
@@ -129,7 +129,7 @@ class YamapSearch: NSObject {
                         return
                     }
 
-                    resolver(self.convertSearchResponce(search: search))
+                    resolver(self.convertSearchResponse(search: search))
                 })
             }
         } catch {
@@ -166,7 +166,7 @@ class YamapSearch: NSObject {
     }
 
     @objc func searchByPoint(_ point: [String: Any], zoom: NSNumber, options: [String: Any]?, resolver: @escaping RCTPromiseResolveBlock, rejecter: @escaping RCTPromiseRejectBlock) {
-        let searchPoint = YMKPoint(latitude: point["lat"] as! Double, longitude: point["lat"] as! Double)
+        let searchPoint = YMKPoint(latitude: point["lat"] as! Double, longitude: point["lon"] as! Double)
         self.initSearchManager()
         self.setSearchOptions(options: options)
         runOnMainQueueWithoutDeadlocking {
@@ -176,13 +176,13 @@ class YamapSearch: NSObject {
                     return
                 }
 
-                resolver(self.convertSearchResponce(search: search))
+                resolver(self.convertSearchResponse(search: search))
             })
         }
     }
 
     @objc func geoToAddress(_ point: [String: Any], resolver: @escaping RCTPromiseResolveBlock, rejecter: @escaping RCTPromiseRejectBlock) {
-        let searchPoint = YMKPoint(latitude: point["lat"] as! Double, longitude: point["lat"] as! Double)
+        let searchPoint = YMKPoint(latitude: point["lat"] as! Double, longitude: point["lon"] as! Double)
         self.initSearchManager()
         self.setSearchOptions(options: nil)
         runOnMainQueueWithoutDeadlocking {
@@ -192,7 +192,7 @@ class YamapSearch: NSObject {
                     return
                 }
 
-                resolver(self.convertSearchResponce(search: search))
+                resolver(self.convertSearchResponse(search: search))
             })
         }
     }
@@ -207,7 +207,7 @@ class YamapSearch: NSObject {
                     return
                 }
 
-                resolver(self.convertSearchResponce(search: search))
+                resolver(self.convertSearchResponse(search: search))
             })
         }
     }
@@ -222,7 +222,7 @@ class YamapSearch: NSObject {
                     return
                 }
 
-                resolver(self.convertSearchResponce(search: search))
+                resolver(self.convertSearchResponse(search: search))
             })
         }
     }
